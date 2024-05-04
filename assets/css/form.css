@@ -35,3 +35,8 @@
     margin-top: 10px;
     width: 50%;
   }
+
+  .submit button.dark {
+    background-color: white;
+    color: black;
+}
