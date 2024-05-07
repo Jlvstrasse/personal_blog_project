@@ -24,6 +24,7 @@ header {
 main {
     border-top: 2px solid black;
     margin-top: 2px;
+  
   }
 
   .title-card {
@@ -54,6 +55,15 @@ main {
         font-weight: bold;
   }
 
+  footer {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2px;
+    flex-direction: column;
+  }
+
 
   /* Light Mode Styles */
   [data-theme='light'] {
@@ -78,11 +88,11 @@ main {
     border-right: 2px solid white;
   }
 
-  [data-theme='dark'] .form {
+  [data-theme='dark'] #card {
     border-left: 2px solid white;
   }
 
-  [data-theme='dark'] .submit {
+  [data-theme='dark'] #submit {
     background-color: white;
     color: black;
 }

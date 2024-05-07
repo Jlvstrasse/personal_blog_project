@@ -1,4 +1,4 @@
-.form {
+#card {
     border-left: 2px solid black;
     margin-left: 1px;
     float: right;
@@ -15,30 +15,29 @@
     font-size: 2.5rem;
     font-weight: bold;
   }
+   
 
-  .info {
+  #info {
     width: 90%;
   }
   
-  .info h2 {
+  #info label {
     font-size: 1rem;
     margin-bottom: 2px;
   }
   
-  .info input {
+  #info input {
     width: 100%;
   }
 
-  .submit {
+  #submit {
     background-color: black;
     color: white;
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
   }
 
-  .content {
-    height:100px;
-  }
+ 
 
   textarea {
     width: 100%;

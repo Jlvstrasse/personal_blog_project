@@ -33,9 +33,62 @@ h1 {
   padding-left: 10px;
 }
 
-.back {
+#back {
   background-color: black;
   color: white;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.blogs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px;
+  justify-content: space-around;
+}
+
+.blog-post .title {
+  font-weight: bold;
+  margin: 5px 0 0 10px;
+}
+
+.blog-post hr {
+  
+  border: 1px solid black;
+  margin: 2px 15px 15px 15px;
+}
+
+.blog-post .content {
+  margin: 10px 10px 10px 30px;
+  font-style: italic;
+}
+
+.blog-post .author {
+  margin: 0 0 0 10px;
+  color: black;
+}
+
+footer {
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  flex-direction: column;
 }
 
 /* Light Mode Styles */
@@ -57,4 +110,8 @@ h1 {
   [data-theme='dark'] .back {
     background-color: white;
     color: black;
+  }
+
+  [data-theme='dark'] footer {
+    border-top: 2px solid #fff;
   }

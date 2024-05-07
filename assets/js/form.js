@@ -1,35 +1,52 @@
-const form = document.querySelector('.form'); // Select the form element
-
-form.addEventListener('submit', saveFormData); // Add event listener to the form
+const msg = document.createElement('p'); 
+const form = document.getElementById('info');   
 
 function saveFormData(event) {
     event.preventDefault();
+    
 
-    const username = document.querySelector('#username').value;
-    const title = document.querySelector('#title').value;
-    const content = document.querySelector('#content').value;
-    const card = document.querySelector('.title-card'); // Assuming card is the container for the message
+    let username = document.querySelector('#username').value;
+    let title = document.querySelector('#title').value;
+    let content = document.querySelector('#content').value;
 
-    const msg = document.createElement('p');
+    
 
     if (!username || !title || !content) {
         msg.textContent = "Complete the form.";
-        card.appendChild(msg);
+        form.appendChild(msg);
         msg.setAttribute('style', 'color: red; text-align: center');
+       
     } else {
-        const userObj = {
+        let userObj = {
             username: username,
             title: title,
             content: content
-        };
+        }
+        console.log(username)
 
         saveToStorage(userObj);
         location.href = './blog.html';
-    }
 }
-
+}
 function saveToStorage(userObj) {
-    let storageData = JSON.parse(localStorage.getItem('blogs')) || [];
+    let storageData = JSON.parse(localStorage.setItem('blogs')) || [];
     storageData.push(userObj);
     localStorage.setItem('blogs', JSON.stringify(storageData));
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    info.addEventListener('submit', saveFormData); 
+   })
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const submitBtn = document.getElementById("submit");
+//     submitBtn.addEventListener("click", () => {
+//       location.href = './blog.html'
+//   });
+// });
+
+
+
+

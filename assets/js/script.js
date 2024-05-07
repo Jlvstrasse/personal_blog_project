@@ -19,7 +19,7 @@ const modeToggle = document.getElementById('mode-toggle');
 }
 
 
-// Check local storage for theme
+
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
