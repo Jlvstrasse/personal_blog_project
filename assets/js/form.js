@@ -1,52 +1,47 @@
-const msg = document.createElement('p'); 
-const form = document.getElementById('info');   
+let msg = document.createElement('p'); 
+let form = document.getElementById('info');  
+let usernameInput = document.getElementById('username');
+let titleInput = document.getElementById('title');
+let contentInput = document.getElementById('content');
+const submitBtn = document.getElementById("submit");
 
-function saveFormData(event) {
+let storageData = JSON.parse(localStorage.getItem('blogs')) || [];
+
+submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    
 
-    let username = document.querySelector('#username').value;
-    let title = document.querySelector('#title').value;
-    let content = document.querySelector('#content').value;
-
-    
+    const username = usernameInput.value;
+    const title = titleInput.value;
+    const content = contentInput.value;
 
     if (!username || !title || !content) {
         msg.textContent = "Complete the form.";
         form.appendChild(msg);
         msg.setAttribute('style', 'color: red; text-align: center');
-       
-    } else {
-        let userObj = {
+    } else { 
+        let newObj = {
             username: username,
             title: title,
             content: content
-        }
-        console.log(username)
-
-        saveToStorage(userObj);
+        };
+        
+        console.log('Data to be saved:', newObj);
+        saveToStorage(newObj);
         location.href = './blog.html';
-}
-}
-function saveToStorage(userObj) {
-    let storageData = JSON.parse(localStorage.setItem('blogs')) || [];
-    storageData.push(userObj);
+    }
+});
+
+function saveToStorage(newObj) {
+    storageData.push(newObj);
     localStorage.setItem('blogs', JSON.stringify(storageData));
 }
 
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    saveFormData();
+});
 
-document.addEventListener('DOMContentLoaded', function() {
-    info.addEventListener('submit', saveFormData); 
-   })
+function saveFormData() {
 
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const submitBtn = document.getElementById("submit");
-//     submitBtn.addEventListener("click", () => {
-//       location.href = './blog.html'
-//   });
-// });
-
-
-
+}
 
