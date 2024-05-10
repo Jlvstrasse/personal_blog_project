@@ -55,34 +55,32 @@ main {
   
 }
 
-.blog-post {
+.post {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  border-radius: 10px;
   width: 100%;
   margin: 10px;
   justify-content: space-around;
 }
 
-.blogs h1 {
+.blogs .title {
   font-weight: bold;
   margin: 5px 0 0 10px;
-  color: purple;
+  
 }
 
-.blog-post hr {
-  
+.post hr {
   border: 1px solid black;
   margin: 2px 15px 15px 15px;
 }
 
-.blog-post .content {
-  margin: 10px 10px 10px 30px;
+.post .content {
+  margin: 10px 10px 10px 25px;
   font-style: italic;
 }
 
-.blog-post .author {
+.post .author {
   margin: 0 0 0 10px;
   color: black;
 }

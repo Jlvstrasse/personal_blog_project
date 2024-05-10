@@ -1,6 +1,7 @@
 const modeToggle = document.getElementById('mode-toggle');
 modeToggle.addEventListener('click', toggleMode);
-const blogsDiv = document.getElementById('blogs');
+// const blogsDiv = document.getElementById('blogs');
+const blogsDiv = document.querySelector('#blogs');
 
 function loadBlogs() {
     let blogs = JSON.parse(localStorage.getItem('blogs'));
